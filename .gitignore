@@ -2,6 +2,13 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+composer.phar
+# Текстовые файлы для заметок
+/*.txt
 
 # Laravel 4 specific
 bootstrap/compiled.php
