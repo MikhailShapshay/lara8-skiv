@@ -1,0 +1,75 @@
+$num = 100
+$time = 20s
+$time-range = 10s
+
+random(min, max)
+  return floor(math(0, 'random')*(max - min + 1) + min)
+
+body
+  width 100vw
+  height 100vh
+  margin 0
+  overflow hidden
+  animation hue 50s linear infinite
+
+.stars
+  .container
+    position absolute
+    animation stars linear infinite
+    .star
+      animation twinkle linear infinite
+      border-radius 100%
+      transform translateZ(0)
+  for n in (0..100)
+    .container:nth-child({n})
+      width random(2, 30px)
+      height @width
+      left (random(0, 200) / 2vw)
+      animation-delay (random(2, 80) / 100s / @width - 1000s)
+      animation-duration (random(900, 1100) / 5s / @width)
+      .wrap
+        width inherit
+        height inherit
+      .star
+        width inherit
+        height inherit
+        animation-delay (random(1, 100) / 10s - 50s)
+        animation-duration (random(50, 500) / 10s)
+        background rgba(random(200, 255), random(150, 255), random(100, 255), (random(7, 10) / 10))
+
+
+
+@keyframes stars
+  0%
+    top 110vh
+  100%
+    top -10vh
+
+@keyframes twinkle
+  0%, 80%, 100%
+    opacity .7
+  95%
+    opacity 1
+
+
+
+
+
+.background
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%)
+  background -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%)
+  background -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%)
+  background -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%)
+
+@keyframes hue
+  0%
+    filter hue-rotate(0deg)
+    -webkit-filter hue-rotate(0deg)
+  100%
+    filter hue-rotate(360deg)
+    -webkit-filter hue-rotate(360deg)

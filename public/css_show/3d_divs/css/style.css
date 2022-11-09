@@ -1,0 +1,47 @@
+html,body{
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+}
+svg{
+	width: 100%;
+	height: 100%;
+}
+
+.rect{
+	position: absolute;
+	border: grey 20px solid;
+    transform: translate(-50%,-50%);
+    border-radius: 10%;
+	transition: opacity .5s;
+}
+.line{
+	position: absolute;
+	border: grey 10px solid;
+    transform: translate(-50%,0%);
+	transition: opacity .5s;
+}
+
+@keyframes rotateY{
+	to{ transform: rotateY(360deg) }
+}
+@keyframes rotateYX{
+	to{ transform: rotateY(360deg) rotateX(360deg) }
+}
+@keyframes rotateYXY{
+	to{ transform: rotateY(360deg) rotateX(360deg) rotateY(360deg) }
+}
+@keyframes rotateYXYX{
+	to{ transform: rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) }
+}
+@keyframes rotateYXYXY{
+	to{ transform: rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) rotateY(360deg) }
+}
+@keyframes rotateYXYXYX{
+	to{ transform: rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) }
+}
+@keyframes rotateYXYXYXY{
+	to{ transform: rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) rotateY(360deg) rotateX(360deg) rotateY(360deg) }
+}
